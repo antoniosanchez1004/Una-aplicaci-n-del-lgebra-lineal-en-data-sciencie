@@ -61,7 +61,7 @@ resta
  div
  
  # Tipos de variable
- # Hay númericas, caracteres o booleanos (verdadero o falso)
+ # Hay númericas, caracteres o lógicos (verdadero o falso)
  # Numerica
  edad <- 25
  # Caracter, los textos van entre comillas
@@ -72,14 +72,14 @@ resta
  # as.date es formato de fecha
  fecha <- as.Date("2025-08-18")
  
- # Para ver la clase de los objetos se usa la función class
+ # Para ver la clase de los objetos se usa la función class (Los devuelve en inglés)
  
  class(edad)
  # Devuelve numerico
  class(nombre)
  # Devuelve caracter
  class(es_estudiante)
- # Devuelve booleano
+ # Devuelve lógico
  class(fecha)
 # Devuelve fecha
 
@@ -99,13 +99,26 @@ resta
  # Vector categorico
  vect_cat <- c("Luis", "Gera", "Jorge")
 
- # Vector de Booleanos
+ # Vector de lógicos
 vect_boo <- c(TRUE, FALSE)
 
 # Con la función length podemos ver el tamaño de los vectores 
 length(vect_num)
 length(vect_cat)
 length(vect_boo)
+
+# Más operaciones con vectores
+# Supongamos que tenemos las edades de 3 personas
+edades <- c(20, 25, 30)
+
+# Si sumamos 2, se le suma elemento a elemento
+edades_en_dos_años <- edades + 2
+edades_en_dos_años # Devuelve: 22, 27, 32
+
+# Multiplicar vectores entre sí
+pesos <- c(2, 1.5, 3)
+# El producto se hará elemento por elemento
+edades * pesos
 
 # Generación de numeros aleatorios
 # La función esencial o básica para generar números pseudoaleatorios es:
@@ -137,4 +150,11 @@ sample(alumnos, 2)
 z <- sample(alumnos, 20, replace = TRUE)
 table(z)
 
-o
+# Veamos cómo accedemos a elementos de vectores
+# Para acceder a un elemento de un vector, usaremos los corchetes 
+# objeto[n] donde [n] es la posición del elemento que buscamos
+alumnos[2] # Devuelve "Carlos"
+
+# También podemos acceder a varios elementos a la vez
+# La sintaxis es similar a un vector (estamos elegiendo más de uno)
+alumnos[c(1, 3)] # Devuelve "Ana" y "Fernanda"
